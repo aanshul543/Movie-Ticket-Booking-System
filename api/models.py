@@ -34,3 +34,11 @@ class MovieTheatreShow(models.Model):
     theatre = models.ForeignKey(Theatre, on_delete=models.CASCADE)
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
+
+class BookedTickets(models.Model):
+    username = models.CharField(max_length=50)
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    theatre = models.ForeignKey(Theatre, on_delete=models.CASCADE)
+    show = models.ForeignKey(Show, on_delete=models.CASCADE)
+    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    booked_seats = models.IntegerField()
